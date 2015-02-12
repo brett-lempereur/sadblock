@@ -12,7 +12,7 @@ Things are a little bit temperamental right now, but they'll probably improve ov
 
 Help with any of these things would be appreciated:
 
-1. Get a better logo.
+1. Replace AdBlock branding with Sadblock branding.
 2. Have somebody that cares enough write a manifesto for the blocking page.
 3. Rip out most of the guts of AdBlock except for the minimal functionality needed, in particular the really sketchy unique identification stuff.
 4. Allow users to view a page by agreeing to permit it to advertise and track.
