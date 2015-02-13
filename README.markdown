@@ -2,6 +2,8 @@
 
 The loneliest ad-blocker in the world.
 
+![Demonstration](img/screenshot.gif)
+
 ## Why
 
 This started as a joke after I sat on the sidelines during a heated discussion about the ethics of using ad-blocking software, and had no strong opinion on the matter.  An impasse was reached that perhaps, just perhaps, an extension that prevented a user from viewing content _as well as_ advertising might be more ethically palatable.
