@@ -8,6 +8,12 @@ This started as a joke after I sat on the sidelines during a heated discussion a
 
 Things are a little bit temperamental right now, but they'll probably improve over time.
 
+## How
+
+This is a barely modified version of AdBlock that blocks content _and_ advertising.  Over time the code will diverge more from the AdBlock base.  With a little more work I'll be using a Shadow DOM to avoid redirecting to the extension web content page.  This will also give the user the option to "whitelist" the site for both content and advertising.
+
+I don't expect this to be so widely used.  People tend to either prefer to block adverts, or to allow everything, and I've never seen much of an attempt at anything else.  But still, it's an interesting experiment to try and get consumers and producers of content to meet in the middle. 
+
 ## Todo
 
 Help with any of these things would be appreciated:

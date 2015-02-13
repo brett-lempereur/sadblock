@@ -1,6 +1,6 @@
 {
-  "name": "AdBlock",
-  "version": "2.18",
+  "name": "Sadblock",
+  "version": "1.0",
   "background": {
     "scripts": [
       "jquery/jquery.min.js",
