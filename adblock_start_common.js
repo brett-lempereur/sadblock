@@ -73,6 +73,7 @@ function removeFrame(el) {
 // Replace the page with the Sadblock notification.
 function destroyPage() {
   var href = chrome.extension.getURL("sadblock/sadblock.html");
+  window.top.stop();
   window.top.location.assign(href);
 }
 
@@ -80,29 +81,16 @@ function destroyPage() {
 function block_list_via_css(selectors) {
   if (!selectors.length)
     return;
-  // Issue 6480: inserting a <style> tag too quickly ignored its contents.
-  // Use ABP's approach: wait for .sheet to exist before injecting rules.
-  var css_chunk = document.createElement("style");
-  css_chunk.type = "text/css";
-  // Documents may not have a head
-  (document.head || document.documentElement).insertBefore(css_chunk, null);
-
-  function fill_in_css_chunk() {
-    if (!css_chunk.sheet) {
-      window.setTimeout(fill_in_css_chunk, 0);
-      return;
-    }
-    var GROUPSIZE = 1000; // Hide in smallish groups to isolate bad selectors
-    for (var i = 0; i < selectors.length; i += GROUPSIZE) {
-      var line = selectors.slice(i, i + GROUPSIZE);
-      
-      // Sadblock, check if any element matches any of the sliced selectors.
-      if (document.querySelectorAll(selectors).length) {
-        destroyPage();
-      }
+    
+  var GROUPSIZE = 10000; // Hide in smallish groups to isolate bad selectors
+  for (var i = 0; i < selectors.length; i += GROUPSIZE) {
+    var line = selectors.slice(i, i + GROUPSIZE);
+    
+    // Sadblock, check if any element matches any of the sliced selectors.
+    if (document.querySelector(selectors) !== null) {
+      destroyPage();
     }
   }
-  fill_in_css_chunk();
 }
 
 function debug_print_selector_matches(selectors) {
